@@ -10,6 +10,7 @@ Ogni membro dovrà avere le informazioni necessarie per stampare la relativa car
 */
 
 const containerTeam = document.querySelector(".team-container");
+const addBtn = document.getElementById("addMemberButton");
 
 
 let team = [
@@ -50,6 +51,30 @@ let team = [
     },
 ];
 
+addBtn.addEventListener("click",
+    function(){
+        let nameInput = document.getElementById("name").value;
+        let roleInput = document.getElementById("role").value;
+        let imageInput = document.getElementById("image").value;
+        
+        console.log(nameInput, roleInput, imageInput);
+
+        let addCard = {
+            "image": imageInput,
+            "name": nameInput,
+            "title": roleInput
+        }
+
+        /* console.log(addCard); */
+
+        team.push(addCard);
+
+        /* console.log(team); */
+
+        newCard(imageInput, nameInput, roleInput);
+
+    }
+);
 
 for(i = 0; i < team.length; i++){
     let teamIndex = team[i];
@@ -60,9 +85,6 @@ for(i = 0; i < team.length; i++){
 
     let card = newCard(imgVar, nameVar, titleVar);
 
-    console.log(imgVar);
-    console.log(nameVar);
-    console.log(titleVar);
 }
 
 
