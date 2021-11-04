@@ -11,10 +11,6 @@ Ogni membro dovrà avere le informazioni necessarie per stampare la relativa car
 
 const containerTeam = document.querySelector(".team-container");
 
-let img = "";
-let name = "";
-let title = "";
-
 
 let team = [
     {
@@ -28,29 +24,51 @@ let team = [
         "name":  "Angela Caroll",
         "title": "Chief Editor"
     },
+
+    {
+        "image": "img/walter-gordon-office-manager.jpg",
+        "name":  "Walter Gordon",
+        "title": "Office Manager"
+    },
+
+    {
+        "image": "img/angela-lopez-social-media-manager.jpg",
+        "name":  "Angela Lopez",
+        "title": "Social Media Manager"
+    },
+
+    {
+        "image": "img/scott-estrada-developer.jpg",
+        "name":  "Scott Estrada",
+        "title": "Developer"
+    },
+
+    {
+        "image": "img/barbara-ramos-graphic-designer.jpg",
+        "name":  "Barbara Ramos",
+        "title": "Graphic Designer"
+    },
 ];
 
 
 for(i = 0; i < team.length; i++){
     let teamIndex = team[i];
-    img = teamIndex.image;
-    name = teamIndex.name;
-    title = teamIndex.title; 
 
-/*     for(let key in teamIndex){
-        console.log(key, teamIndex[key]);
-        
-    } */
+    let imgVar = teamIndex.image;
+    let nameVar = teamIndex.name;
+    let titleVar = teamIndex.title; 
+
+    let card = newCard(imgVar, nameVar, titleVar);
+
+    console.log(imgVar);
+    console.log(nameVar);
+    console.log(titleVar);
 }
 
 
-let founder = newCard(img, name, title);
-let chiefEditor = newCard(img, name, title);
 
 
-console.log(img);
-console.log(name);
-console.log(title);
+
 
 
 
