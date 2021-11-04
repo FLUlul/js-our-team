@@ -9,10 +9,35 @@ Ogni membro dovrà avere le informazioni necessarie per stampare la relativa car
 - Utilizziamo poi gli input presenti nella pagina per permettere all’utente di aggiungere nuovi membri del team.
 */
 
+/* 
+-mi creo una funzione che mi permetta di avere l'html con le variabili che do ai parametri della funzione
+-creo l'array di oggetti con le informazioni suddivise in
+    immagine
+    nome
+    titolo
+creo un ciclo for
+    mi creo una variabile a cui assegno l'indice i dell'array
+    mi creo una varabile dove vado a prendere il contenuto della chiave immagine nell'oggetto dell'indice
+    mi creo una varabile dove vado a prendere il contenuto della chiave nome nell'oggetto dell'indice
+    mi creo una varabile dove vado a prendere il contenuto della chiave titolo nell'oggetto dell'indice
+
+    richiamo la funzione html cambiando i parametri con le variabili
+
+
+    -creo un event listener click al pulsante del form
+        mi prende il valore dentro l'input nome
+        mi prende il valore dentro l'input ruolo
+        mi prende il valore dentro l'input immagine
+
+        mi richiamo la funzione html cambiando i parametri con le variabili.
+
+*/
+
+/* costanti per associare gli elementi in html */
 const containerTeam = document.querySelector(".team-container");
 const addBtn = document.getElementById("addMemberButton");
 
-
+/* array di oggetti  */
 let team = [
     {
         "image": "img/wayne-barnett-founder-ceo.jpg",
@@ -51,31 +76,35 @@ let team = [
     },
 ];
 
+/* pulsante del form */
 addBtn.addEventListener("click",
     function(){
+        /* i valori inseriti negli input quando clicca */
         let nameInput = document.getElementById("name").value;
         let roleInput = document.getElementById("role").value;
         let imageInput = document.getElementById("image").value;
         
         console.log(nameInput, roleInput, imageInput);
 
-        let addCard = {
+        /* let addCard = {
             "image": imageInput,
             "name": nameInput,
             "title": roleInput
-        }
+        } */
 
         /* console.log(addCard); */
 
-        team.push(addCard);
+        /* team.push(addCard); */
 
         /* console.log(team); */
 
+        /* richiamo funzione html con le variabili dei valori inseriti */
         newCard(imageInput, nameInput, roleInput);
 
     }
 );
 
+/* ciclo for per riempire la pagina, prendendo i valori dall'array di oggetti */
 for(i = 0; i < team.length; i++){
     let teamIndex = team[i];
 
@@ -88,13 +117,7 @@ for(i = 0; i < team.length; i++){
 }
 
 
-
-
-
-
-
-
-
+/* funzione per creare il blocco html */
 function newCard(imageUrl, nameCard, titleCard){
 
     containerTeam.innerHTML += `
