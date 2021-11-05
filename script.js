@@ -97,9 +97,15 @@ addBtn.addEventListener("click",
         team.push(addCard);
 
         /* console.log(team); */
+        let teamIndex = team[team.length-1];
 
+        let imgVar = teamIndex.image;
+        let nameVar = teamIndex.name;
+        let titleVar = teamIndex.title; 
+    
+        newCard(imgVar, nameVar, titleVar);
         /* richiamo funzione html con le variabili dei valori inseriti */
-        newCard(imageInput, nameInput, roleInput);
+        /* newCard(imageInput, nameInput, roleInput); */
 
     }
 );
@@ -112,9 +118,10 @@ for(i = 0; i < team.length; i++){
     let nameVar = teamIndex.name;
     let titleVar = teamIndex.title; 
 
-    let card = newCard(imgVar, nameVar, titleVar);
+    newCard(imgVar, nameVar, titleVar);
 
 }
+
 
 
 /* funzione per creare il blocco html */
