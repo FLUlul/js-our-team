@@ -86,15 +86,15 @@ addBtn.addEventListener("click",
         
         console.log(nameInput, roleInput, imageInput);
 
-        /* let addCard = {
+        let addCard = {
             "image": imageInput,
             "name": nameInput,
             "title": roleInput
-        } */
+        }
 
         /* console.log(addCard); */
 
-        /* team.push(addCard); */
+        team.push(addCard);
 
         /* console.log(team); */
 
